@@ -15,7 +15,7 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- 
     - google font link
@@ -33,6 +33,7 @@
 
   <header class="header" data-header>
     <div class="container">
+
 
       <div class="overlay" data-overlay></div>
 
@@ -60,7 +61,7 @@
           </select>
         </div>
 
-        <button class="btn btn-primary">Masuk</button>
+        <button class="play-btn-login btn btn-primary">Masuk</button>
 
       </div>
 
@@ -127,7 +128,7 @@
           </li>
 
           <li>
-            <a href="#" class="navbar-social-link">
+            <a href="" class="navbar-social-link">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
@@ -155,14 +156,15 @@
       <section class="hero">
         <div class="container">
 
+
           <div class="hero-content">
 
             <p class="hero-subtitle">Filmlane</p>
 
             <h1 class="h1 hero-title">
               Film <strong>Tak Terbatas</strong>, Acara TV, & Lainnya.
-            </h1>
 
+            </h1>
             <div class="meta-wrapper">
 
               <div class="badge-wrapper">
@@ -170,6 +172,7 @@
 
                 <div class="badge badge-outline">HD</div>
               </div>
+
 
               <div class="ganre-wrapper">
                 <a href="#">Romantis,</a>
@@ -195,10 +198,16 @@
 
             </div>
 
-            <button class="btn btn-primary">
-              <ion-icon name="play"></ion-icon>
+            <button class=" btn btn-primary">
 
-              <span>Tonton sekarang</span>
+              <ion-icon name="play"></ion-icon>
+              <a href="#top-rated">
+                Tonton Sekarang
+              </a>
+
+              </a>
+
+
             </button>
 
           </div>
@@ -473,7 +482,7 @@
         - #TOP RATED
       -->
 
-      <section class="top-rated">
+      <section class="top-rated" id="top-rated">
         <div class="container">
 
           <p class="section-subtitle">Penayangan Online</p>
@@ -990,6 +999,23 @@
 
     <div class="footer-top">
       <div class="container">
+        <div id="login" class="modal fade" role="dialog" style="display:none;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <button data-dismiss="modal" class="close">&times;</button>
+                <div class="login-title">
+                  <h2>LOGIN</h2>
+                </div>
+                <form>
+                  <input type="text" name="username" class="username form-control" placeholder="Username" />
+                  <input type="password" name="password" class="password form-control" placeholder="password" />
+                  <input class="btn login" type="submit" value="Login" />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="footer-brand-wrapper">
 

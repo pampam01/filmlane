@@ -13,6 +13,8 @@
  * #CUSTOM PROPERTY
 \*-----------------------------------*/
 
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap');
+
 /* Menggunakan :root untuk mendefinisikan variabel CSS global */
 :root {
 
@@ -35,6 +37,7 @@
   --white: hsl(0, 100%, 100%);
   --black: hsl(0, 0%, 0%);
   --jet: hsl(0, 0%, 20%);
+  --pampam: hsla(131, 86%, 31%, 0.966);
 
   /**
    * typography
@@ -42,6 +45,7 @@
 
   /* Definisi font dan ukuran font */
   --ff-poppins: 'Poppins', sans-serif;
+  --pacifico: 'Pacifico', cursive;
 
   --fs-1: 36px;
   --fs-2: 32px;
@@ -92,7 +96,7 @@
 }
 
 /* Menghilangkan bullet pada list */
-li { list-style: none; }
+li {list-style: none; }
 
 /* Menghilangkan underline pada link */
 a { text-decoration: none; }
@@ -143,6 +147,14 @@ body.active { overflow: hidden; }
 
 /* Mengatur padding pada container */
 .container { padding-inline: 15px; }
+
+
+
+
+.button:hover {
+  background-color: blue; /* Warna saat hover biru */
+}
+
 
 /**
  * TITLES & SUBTITLES
@@ -204,6 +216,8 @@ body.active { overflow: hidden; }
  */
 
 /* Mengatur style pada meta wrapper */
+
+
 .meta-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -232,7 +246,7 @@ body.active { overflow: hidden; }
 }
 
 /* Mengatur warna link pada genre wrapper saat hover dan focus */
-.ganre-wrapper > a:is(:hover, :focus) { color: var(--citrine); }
+.ganre-wrapper > a:is(:hover, :focus) { color: var(--citrine) }
 
 /* Mengatur gap pada date-time */
 .date-time { gap: 15px; }
@@ -441,12 +455,14 @@ body.active { overflow: hidden; }
   padding-block: 25px;
   transition: var(--transition-2);
   z-index: 4;
+ 
 }
 
 /* Mengatur background dan padding pada header saat active */
 .header.active {
   background: var(--eerie-black);
   padding-block: 20px;
+ /* background: red;; */
 }
 
 /* Mengatur style pada container dalam header */
@@ -516,13 +532,20 @@ body.active { overflow: hidden; }
   color: var(--white);
   font-size: var(--fs-8);
   font-weight: var(--fw-500);
-  padding: 10px 25px;
+  padding: 10px; 
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
   transition: var(--transition-1);
 }
 
 /* Mengatur warna link dalam navbar saat hover dan focus */
-.navbar-link:is(:hover, :focus) { color: var(--citrine); }
+.navbar-link:is(:hover, :focus) { 
+
+  background: var(--citrine);
+  color: var(--black);
+  padding: 10px 20px;
+  border-radius: 10px;
+
+ }
 
 /* Mengatur style pada list sosial dalam navbar */
 .navbar-social-list {
@@ -1113,13 +1136,14 @@ body.active { overflow: hidden; }
 /* Mengatur gaya subtitle dalam detail film */
 .detail-subtitle {
   font-size: var(--fs-5); /* Ukuran font */
+  font-family: var(--pacifico);
   color: var(--citrine); /* Warna teks */
   font-weight: var(--fw-700); /* Ketebalan font */
   margin-bottom: 10px; /* Margin bawah */
 }
 
 /* Mengatur margin bawah untuk judul detail film */
-.detail-title { margin-bottom: 20px; }
+.detail-title { margin-bottom: 20px; font-family: var(--pacifico);}
 
 /* Mengatur gaya teks tebal dalam judul detail film */
 .detail-title strong { color: var(--citrine); }
@@ -1358,6 +1382,123 @@ body.active { overflow: hidden; }
 
 /* Selector CSS untuk ikon dalam tombol unduh */
 .download-btn ion-icon { font-size: 16px; /* Ukuran font ikon */ }
+
+ /*Trigger Button*/
+ .login-trigger {
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--black);
+  padding: 15px 30px;
+  border-radius: 30px;
+  position: relative;
+  top: 50%;
+}
+
+/*Modal*/
+
+
+#login {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--citrine);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 500px;
+  z-index: 1000;
+}
+
+h2 {
+  font-weight: bold;
+  color: #fff;
+}
+
+.btn-primary > a{
+  text-decoration: none;
+  color: var(--white);
+}
+
+.btn-primary a >:is(:hover, :focus) {
+  color: var(--black);
+}
+
+.close {
+  position: absolute;
+  float: right;
+  color: white;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  color: #fff;
+  transform: scale(1.2);
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.modal-content {
+  font-weight: bold;
+  background-color: var(--black);
+  padding: 50px;
+}
+.modal-body{
+  display: flex;
+  flex-direction: column;
+  
+  
+  gap: 10px;
+}
+
+.login-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+.form-control {
+  margin: 1em 0;
+}
+
+.form-control:hover,
+.form-control:focus {
+  box-shadow: none;
+  border-color: #fff;
+}
+
+.username,
+.password {
+  gap: 10px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 2px solid #eee;
+  padding-left: 0;
+  font-weight: normal;
+  background: transparent;
+}
+
+
+.login {
+  padding: 6px 20px;
+  border-radius: 20px;
+  background: none;
+  border: 2px solid var(--citrine);
+  color: var(--white);
+  font-weight: bold;
+  transition: all .5s;
+  margin-top: 1em;
+}
+
+.login:hover {
+  background: var(--citrine);
+  color: var(--black);
+}
+
 /*-----------------------------------*\
  * #MEDIA QUERIES
 \*-----------------------------------*/
